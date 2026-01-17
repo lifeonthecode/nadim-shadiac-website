@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Slider</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Hero Section (Like "Explore the World") */
+        .hero {
+            margin-top: -30px;
+            background: #f4f4f4;
+            /* Light gray background */
+            color: #333;
+            /* Dark text color */
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            background-image: url(https://img.freepik.com/free-photo/illustration-cosmic-background-with-orange-neon-laser-lights_181624-19567.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+
+        }
+
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            /* Darker heading color */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #FFF;
+            /* Slightly lighter text color */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .cta-button {
+            background: #ff6f61;
+            /* Coral color for the button */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background: #ff3b2f;
+            /* Darker coral on hover */
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255, 111, 97, 0.6);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Existing Slider Styles */
+        body {
+            margin: 0;
+            background-color: #e5e5e5;
+            font-family: 'Poppins', sans-serif;
+            padding-bottom: 50px;
+        }
+
+        main {
+            width: min(1200px, 90vw);
+            margin: auto;
+        }
+
+        .slider {
+            width: 100%;
+            height: var(--height);
+            overflow: hidden;
+            mask-image: linear-gradient(to right,
+                    transparent,
+                    #000 10% 90%,
+                    transparent);
+        }
+
+        .slider .list {
+            display: flex;
+            width: 100%;
+            min-width: calc(var(--width) * var(--quantity));
+            position: relative;
+        }
+
+        .slider .list .item {
+            width: var(--width);
+            height: var(--height);
+            position: absolute;
+            left: 100%;
+            animation: autoRun 10s linear infinite;
+            transition: filter 0.5s;
+            animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1) - 10s) !important;
+        }
+
+        .slider .list .item img {
+            width: 100%;
+        }
+
+        @keyframes autoRun {
+            from {
+                left: 100%;
+            }
+
+            to {
+                left: calc(var(--width) * -1);
+            }
+        }
+
+        .slider:hover .item {
+            animation-play-state: paused !important;
+            filter: grayscale(1);
+        }
+
+        .slider .item:hover {
+            filter: grayscale(0);
+        }
+
+        .slider[reverse="true"] .item {
+            animation: reversePlay 10s linear infinite;
+        }
+
+        @keyframes reversePlay {
+            from {
+                left: calc(var(--width) * -1);
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section (Like "Explore the World") -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore the Infinite</h1>
+            <p>Discover a seamless collection of stunning visuals that never ends.</p>
+            <a href="#slider" class="cta-button">Start Exploring</a>
+        </div>
+    </section>
+
+    <!-- Infinite Slider Section -->
+    <main id="slider">
+        <div class="slider" style="
+            --width: 100px;
+            --height: 200px;
+            --quantity: 10;
+        ">
+            <div class="list">
+                <div class="item" style="--position: 1"><img
+                        src="https://www.pngall.com/wp-content/uploads/12/Dragon-Ball-Z-PNG-Images-HD.png" alt=""></div>
+                <div class="item" style="--position: 2"><img
+                        src="https://freepngimg.com/save/31333-dragon-ball-broly/450x734" alt=""></div>
+                <div class="item" style="--position: 3"><img
+                        src="https://www.pngall.com/wp-content/uploads/12/Dragon-Ball-Z-PNG-Photo.png" alt=""></div>
+                <div class="item" style="--position: 4"><img
+                        src="https://www.pngarts.com/files/10/DBZ-Goku-Transparent-Image.png" alt=""></div>
+                <div class="item" style="--position: 5"><img
+                        src="https://www.pngall.com/wp-content/uploads/12/Dragon-Ball-Z-PNG-Image.png" alt=""></div>
+                <div class="item" style="--position: 6"><img
+                        src="https://www.pngkey.com/png/full/39-391588_dragon-ball-z-2-dragon-ball-z-frieza.png" alt="">
+                </div>
+                <div class="item" style="--position: 7"><img
+                        src="https://www.pngmart.com/files/4/Dragon-Ball-Broly-PNG-Clipart.png" alt=""></div>
+                <div class="item" style="--position: 8"><img
+                        src="https://freepngimg.com/save/107692-piccolo-ball-z-dragon-png-free-photo/905x1580" alt="">
+                </div>
+                <div class="item" style="--position: 9"><img src="https://dble.bn-ent.net/shared/img/tutorial_btn01.png"
+                        alt=""></div>
+                <div class="item" style="--position: 10"><img
+                        src="https://www.pngplay.com/wp-content/uploads/12/Frieza-Transparent-Free-PNG.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="slider" reverse="true" style="
+            --width: 200px;
+            --height: 400px;
+            --quantity: 9;
+        ">
+            <div class="list">
+                <div class="item" style="--position: 1"><img
+                        src="https://i.redd.it/have-you-ever-wanted-to-own-an-ugly-ape-jpeg-fomo-no-more-v0-nzdicbgv1bpa1.png?width=512&format=png&auto=webp&s=c410042865ab6476a5b6ab031582d2a0b6af2098"
+                        alt=""></div>
+                <div class="item" style="--position: 2"><img
+                        src="https://i.seadn.io/gae/6McrRtw5AB_JTY4qq2kDvkeSS_JRwrvN8hL0SWwzt0KqUf-6d1ojroL76NhBX0_-eIZEpxeiH9LV_LuEyNSdDL18OHFvW7R1QGU55Q?auto=format&dpr=1&w=1000"
+                        alt=""></div>
+                <div class="item" style="--position: 3"><img
+                        src="https://nftcalendar.io/storage/uploads/events/2022/3/eqMsubpo7et1OvOYDk1o6NEyM5o2fvY530lXuSrU.gif"
+                        alt=""></div>
+                <div class="item" style="--position: 4"><img src="https://pbs.twimg.com/media/FLFyaVyX0AcwDDw.jpg"
+                        alt=""></div>
+                <div class="item" style="--position: 5"><img
+                        src="https://nftcalendar.io/storage/uploads/2022/03/24/3_03242022080809623c26e9bfea4.png"
+                        alt=""></div>
+                <div class="item" style="--position: 6"><img
+                        src="https://lh3.googleusercontent.com/303qKlnB6sEyiI-6Y5bC9Z4EOb-wAOW78iAqL5_klFKpS7BDUcAitiQ3jLQTN1yMGErdJUrzVtQlMzL8CO5Wd3FqFip1-2UAmzZFvy8"
+                        alt=""></div>
+                <div class="item" style="--position: 7"><img
+                        src="https://www.teamq.de/storage/posts/April2022/cW9Y71cRTyGtxMKgkxfY.jpg" alt=""></div>
+                <div class="item" style="--position: 8"><img
+                        src="https://preview.redd.it/have-you-ever-wanted-to-own-an-ugly-ape-jpeg-fomo-no-more-v0-whwu35002bpa1.png?width=640&crop=smart&auto=webp&s=6f013e0adf2a69c38c99a77987da53411aba7d9e"
+                        alt=""></div>
+                <div class="item" style="--position: 9"><img
+                        src="https://i.seadn.io/gae/xIvB5gkP2b7tICOTjdLU7hIzR7vYVYAh4UHhg0QosaDO5AvT1ae2a9WuADokaGzXV4HVg_YHYG0Ki8GdxuM2YLCM6-SvqXtpEdWeEWY?auto=format&dpr=1&w=1400&fr=1"
+                        alt=""></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
