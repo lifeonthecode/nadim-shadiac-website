@@ -91,6 +91,15 @@ button {
     width: 100%;
 }
 
+.section-heading p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 148%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+
 
 body {
     font-family: "Gelasio", serif;
@@ -295,10 +304,8 @@ body {
     /* backdrop-filter: blur(250px); */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
-    /* background: #FFFFFF8A; */
-    /* z-index: -1; */
-
 }
 
 .hero-container::before {
@@ -335,7 +342,7 @@ body {
     display: block;
     background: linear-gradient(129.15deg, #00FDC8 -4.81%, #344DD4 99.06%);
     border-radius: 100%;
-    backdrop-filter: blur(5.400000095367432px)
+    backdrop-filter: blur(5.400000095367432px);
 }
 
 .hero-left-wrapper h3 {
@@ -654,6 +661,163 @@ body {
     margin-top: 40px;
 }
 
+/* START PROJECT SECTION  */
+
+.project-section {
+    width: 100%;
+    background: linear-gradient(120.75deg, #00FDC8 11.06%, #000000 44.47%, #344DD4 77.88%);
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 36px;
+}
+
+.project-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #08060C;
+    opacity: .85;
+}
+
+.project-section .container .section-heading {
+    position: relative;
+    z-index: 1;
+}
+
+.project-section .container .section-heading h4 {
+    color: #FFFFFF;
+}
+
+.project-section .container .section-heading h2 {
+    color: #FFFFFF;
+}
+
+.project-section .container .section-heading p {
+    text-align: center;
+}
+
+.project-content-container {
+    padding: 40px 0px;
+}
+
+.project-section-wrapper {
+    position: relative;
+    padding: 32px;
+    border-radius: 32px;
+    z-index: 1;
+    background: #08060C;
+
+}
+
+.project-section-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    padding: 1.55px;
+    border: 1.55px solid;
+    background: linear-gradient(180deg, rgba(159, 238, 255, 0.36) 0%, rgba(77, 105, 255, 0.36) 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.project-status {
+    width: 48px;
+    height: 48px;
+    border: 0.65px solid transparent;
+    border-image: linear-gradient(270deg,
+            rgba(255, 255, 255, 0) -13.45%,
+            rgba(255, 255, 255, 0.67) 49.15%,
+            rgba(255, 255, 255, 0) 111.74%) 1;
+    border-radius: 10px;
+    background: #00B49C26;
+    margin-bottom: 49px;
+}
+
+.project-section-wrapper h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 148%;
+    color: #F2F2F7;
+    text-transform: capitalize;
+    margin-bottom: 49px;
+}
+
+.project-section-inner {
+    gap: 16px;
+}
+
+.project-section-inner button {
+    position: relative;
+    width: max-content;
+    height: 36px;
+    border-radius: 16px;
+    padding: 2px 16px;
+    background: #00B49C26;
+    box-shadow: 0px 0px 20px 0px #00706EB2;
+    font-family: var(--dm-sans);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    border: none;
+    z-index: 1;
+}
+
+.project-section-inner button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) -13.45%, rgba(255, 255, 255, 0.67) 49.15%, rgba(255, 255, 255, 0) 111.74%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.project-section-inner button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background-image: url('../images/icons/border-image.png');
+}
+
+
+.project-bottom-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.project-bottom-wrapper p {
+    font-weight: 600;
+    font-style: Italic;
+    font-size: 18px;
+    leading-trim: NONE;
+    line-height: 148%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    max-width: 571px;
+}
+
+
+
+
+
+
+
+
 
 
 /*`xxl` applies to x-large devices (large desktops, less than 1400px) */
@@ -825,7 +989,38 @@ body {
     .about-right-wrapper>button {
         margin-top: 24px;
     }
+
     .about-section {
         padding-bottom: 40px;
+    }
+
+    .section-heading p {
+        font-size: 16px;
+    }
+
+    .project-status {
+        margin-bottom: 32px;
+    }
+
+    .project-section-wrapper h4 {
+        font-size: 20px;
+        margin-bottom: 32px;
+    }
+
+    .project-section-inner button {
+        font-size: 12px;
+    }
+
+    .gy-4 {
+        gap: 1rem !important;
+    }
+
+    .project-bottom-wrapper p {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .project-section {
+        padding-bottom: 100px;
     }
 }
