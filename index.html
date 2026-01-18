@@ -740,7 +740,7 @@
                         <div class="book-left-wrapper">
                             <h2>TELL ME ABOUT YOUR PROJECT</h2>
                             <form class="book-form-container d-flex flex-column">
-                                <div class="input-control d-flex justify-content-between">
+                                <div class="input-control d-md-flex justify-content-between">
 
                                     <div class="input-box d-flex flex-column">
                                         <label for="name">Name*</label>
@@ -752,14 +752,14 @@
                                         <input type="email" id="email" name="email" placeholder="Enter your email">
                                     </div>
                                 </div>
-                                <div class="input-control d-flex justify-content-between">
+                                <div class="input-control d-md-flex justify-content-between">
 
                                     <div class="input-box d-flex flex-column">
                                         <label for="phone">Phone*</label>
                                         <input type="text" id="phone" name="phone" placeholder="Enter your phone">
                                     </div>
 
-                                    <div class="input-box d-flex flex-column">
+                                    <div class="input-box d-md-flex flex-column">
                                         <label for="select">Preferred Contact Method</label>
                                         <div class="select-box">
                                             <select name="select" id="select">
@@ -811,27 +811,28 @@
 
                                 <div class="calendar-days" id="days"></div>
 
-                                <div class="footer">
-                                    <span>
+                                <div class="calendar-footer">
+                                    <h3>Time zone</h3>
+
+                                    <h5>
                                         <i class="fas fa-earth-americas"></i>
-                                        Central European Time (8:11pm)
-                                    </span>
+                                        Central European Time
+                                        <div>
+                                            <span id="timeDisplay"></span>
+                                            <i class="fa-solid fa-angle-down"></i>
 
+                                            <select id="timezoneSelect" class="d-none">
+                                                <option value="Asia/Dhaka">Asia/Dhaka</option>
+                                                <option value="Europe/Berlin">Europe/Berlin</option>
+                                                <option value="Europe/London">Europe/London</option>
+                                                <option value="America/New_York">America/New_York</option>
+                                                <option value="America/Los_Angeles">America/Los_Angeles</option>
+                                                <option value="Asia/Dubai">Asia/Dubai</option>
+                                            </select>
+                                        </div>
+                                    </h5>
 
-                                    <span>
-                                        <i class="fas fa-earth-americas"></i>
-                                        <select id="timezoneSelect">
-                                            <option value="Asia/Dhaka">Asia/Dhaka</option>
-                                            <option value="Europe/Berlin">Europe/Berlin</option>
-                                            <option value="Europe/London">Europe/London</option>
-                                            <option value="America/New_York">America/New_York</option>
-                                            <option value="America/Los_Angeles">America/Los_Angeles</option>
-                                            <option value="Asia/Dubai">Asia/Dubai</option>
-                                        </select>
-                                        <span id="timeDisplay"></span>
-                                    </span>
-
-                                    <div class="d-block">
+                                    <div class="calendar-footer-bottom d-flex justify-content-between align-items-center">
                                         <span style="color:#3b82f6;cursor:pointer">Cookie settings</span>
                                         <span>report abuse</span>
                                     </div>
