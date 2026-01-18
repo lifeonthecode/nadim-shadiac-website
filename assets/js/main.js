@@ -135,3 +135,9 @@ setInterval(updateTime, 60000);
 
 // initial call
 updateTime();
+
+
+const currentYear = document.getElementById('currentYear');
+let copyrightDate = new Date();
+copyrightDate = copyrightDate.getFullYear();
+currentYear.textContent = copyrightDate;

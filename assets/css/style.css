@@ -19,6 +19,7 @@ ul,
 menu {
     list-style: none;
     margin: 0px;
+    padding: 0px;
 }
 
 a {
@@ -990,7 +991,9 @@ body {
 
 
 /* START BOOK ME SECTION  */
-.book-section {}
+.book-section {
+    padding: 100px 0px;
+}
 
 .book-section .container>.section-heading h2 {
     max-width: 784px;
@@ -1283,8 +1286,85 @@ body {
 
 
 
+/* START FOOTER SECTION  */
+.footer-section {
+    width: 100%;
+    padding: 93px 0px;
+    background-image: url('../images/footer/footer-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footer-top-container {
+    padding-bottom: 24px;
+    border-bottom: 1px solid transparent;
+    border-image-source: linear-gradient(270deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.67) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    border-image-slice: 1;
+}
 
 
+.footer-logo-wrapper {
+    gap: 16px;
+    max-width: 239px;
+    width: 100%;
+}
+
+.footer-logo-wrapper a {
+    font-family: var(--dm-sans);
+    font-weight: 600;
+    font-size: 30.48px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #FCFDFF;
+}
+
+.footer-logo-wrapper p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 148%;
+    color: #FCFDFFCC;
+
+}
+
+.footer-wrapper {
+    gap: 16px;
+}
+
+.footer-wrapper h4 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 148%;
+    letter-spacing: 2%;
+    color: #FFFFFF;
+    text-transform: capitalize;
+}
+
+.footer-wrapper ul li a {
+    padding: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 148%;
+    color: #FFFFFFCC;
+    text-transform: capitalize;
+}
+
+.footer-bottom {
+    padding-top: 32px;
+}
+
+.footer-bottom p {
+    font-family: var(--dm-sans);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #FFFFFFB2;
+
+}
 
 
 
@@ -1610,6 +1690,10 @@ body {
 
     .calendar-footer-bottom span {
         font-size: 12px;
+    }
+
+    .footer-logo-wrapper, .footer-wrapper {
+        margin-bottom: 16px;
     }
 
 
