@@ -16,8 +16,59 @@ const toggle = document.querySelector('.menu-toggle');
 const mobileMenuContainer = document.querySelector('.mobile-menu-container');
 toggle.onclick = () => {
     toggle.classList.toggle('active');
-    mobileMenuContainer.classList.toggle('active')
+    mobileMenuContainer.classList.toggle('active');
 };
+
+const menuLinks = document.querySelectorAll('.navbar-menu li a');
+function smoothScroll(target, duration) {
+    const targetPosition = target.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    const startTime = performance.now();
+
+    function easeInOut(t) {
+        return t < 0.5
+            ? 2 * t * t
+            : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function animation(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = easeInOut(progress);
+
+        window.scrollTo(
+            0,
+            startPosition + targetPosition * ease
+        );
+
+        if (elapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+
+    requestAnimationFrame(animation);
+}
+
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+            smoothScroll(targetSection, 100); // duration ms
+        }
+
+        // mobile menu close
+        toggle.classList.remove('active');
+        mobileMenuContainer.classList.remove('active');
+    });
+});
+
+
+
 
 
 
@@ -141,3 +192,4 @@ const currentYear = document.getElementById('currentYear');
 let copyrightDate = new Date();
 copyrightDate = copyrightDate.getFullYear();
 currentYear.textContent = copyrightDate;
+
