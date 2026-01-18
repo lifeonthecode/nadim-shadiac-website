@@ -1012,7 +1012,7 @@ body {
     background: #FFFFFF;
     border: 1px solid #FFFFFF52;
     box-shadow: 7px 10px 30px 0px #A3C5C345;
-
+    height: 637px;
 }
 
 .book-left-wrapper h2 {
@@ -1091,12 +1091,13 @@ body {
 
 .textarea-box {
     width: 100%;
-    grid-area: 8px;
+    gap: 8px;
 }
 
 .textarea-box textarea {
     width: 100%;
-    max-height: 235px;
+    min-height: 186.38px;
+    height: 100%;
     outline: none;
     border-radius: 8px;
     padding-top: 8px;
@@ -1114,9 +1115,7 @@ body {
 
 .book-right-wrapper {
     width: 100%;
-    height: 620px;
-    width: 620;
-    height: 637.3781127929688;
+    height: 637px;
     border-radius: 24px;
     border-width: 1px;
     padding: 32px;
@@ -1127,22 +1126,17 @@ body {
 
 .book-calendar {
     width: 100%;
-    /* background: #fff;
-    border-radius: 18px;
-    padding: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); */
     height: 100%;
 }
 
 .book-calendar h3 {
     font-family: var(--inter);
     font-weight: 500;
-    font-style: Medium;
     font-size: 24.19px;
     line-height: 150%;
     color: #192552;
     text-transform: capitalize;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
 }
 
 .calendar-header {
