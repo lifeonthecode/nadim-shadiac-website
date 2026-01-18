@@ -1319,6 +1319,11 @@ body {
     .why-project-container .why-project-wrapper:nth-child(2) {
         padding-bottom: 24px;
     }
+
+    .calendar-days div {
+        width: 39px;
+        height: 39px;
+    }
 }
 
 /* `md` applies to small devices (landscape phones, less than 768px) */
@@ -1338,6 +1343,31 @@ body {
 
     .input-box {
         width: 100%;
+    }
+
+    .calendar-header button {
+        width: 33px;
+        height: 33px;
+        font-size: 12px;
+    }
+
+    .calendar-header span {
+        font-size: 14px;
+    }
+
+    .calendar-weekdays div {
+        font-size: 10px;
+    }
+
+    .calendar-days div {
+        font-size: 14px;
+        width: 39px;
+        height: 39px;
+    }
+
+
+    .calendar-footer h5 {
+        font-size: 12px;
     }
 }
 
