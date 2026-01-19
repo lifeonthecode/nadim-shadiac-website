@@ -58,7 +58,7 @@ menuLinks.forEach(link => {
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
-            smoothScroll(targetSection, 100); // duration ms
+            smoothScroll(targetSection, 200); // duration ms
         }
 
         // mobile menu close
@@ -66,6 +66,17 @@ menuLinks.forEach(link => {
         mobileMenuContainer.classList.remove('active');
     });
 });
+
+const contactBtns = document.querySelectorAll('.message');
+contactBtns.forEach(contact => {
+    contact.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetSection = document.querySelector('#contact');
+        if(targetSection) {
+            smoothScroll(targetSection, 200)
+        }
+    })
+})
 
 
 
