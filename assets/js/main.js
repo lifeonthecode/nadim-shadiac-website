@@ -72,9 +72,12 @@ contactBtns.forEach(contact => {
     contact.addEventListener('click', (e) => {
         e.preventDefault();
         const targetSection = document.querySelector('#contact');
-        if(targetSection) {
+        if (targetSection) {
             smoothScroll(targetSection, 200)
-        }
+        };
+        // mobile menu close
+        toggle.classList.remove('active');
+        mobileMenuContainer.classList.remove('active');
     })
 })
 
@@ -174,4 +177,31 @@ const currentYear = document.getElementById('currentYear');
 let copyrightDate = new Date();
 copyrightDate = copyrightDate.getFullYear();
 currentYear.textContent = copyrightDate;
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const card = document.getElementById('flip-card');
+//   const buttons = card.querySelectorAll('.flip-btn');
+
+//   buttons.forEach(btn => {
+//     btn.style.visibility = 'visible';
+
+//     btn.addEventListener('click', (e) => {
+//       e.stopPropagation(); // future safety
+//       card.classList.toggle('do-flip');
+//     });
+//   });
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.project-flip-card').forEach(card => {
+    card.querySelectorAll('.flip-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.toggle('is-flipped');
+      });
+    });
+  });
+});
+
+
 
